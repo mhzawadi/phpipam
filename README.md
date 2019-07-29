@@ -8,6 +8,10 @@ Learn more on [phpIPAM homepage](http://phpipam.net)
 
 ![phpIPAM logo](http://phpipam.net/wp-content/uploads/2014/12/phpipam_logo_small.png)
 
+## News from phpIPAM
+
+[phpIPAM version 1.4 released](https://phpipam.net/news/phpipam-v1-4-released/) on 2019/07/02
+
 ## How to use this Docker image
 
 ### Mysql
@@ -38,21 +42,21 @@ For multi-host containers, expose ports, run etcd or consul to make service disc
 
 ### Configuration
 
-* Browse to `http://<ip>[:<specific_port>]/`
-* Step 1 : Choose 'Automatic database installation'
+- Browse to `http://<ip>[:<specific_port>]/`
+- Step 1 : Choose 'Automatic database installation'
 
 ![step1](https://cloud.githubusercontent.com/assets/4225738/8746785/01758b9e-2c8d-11e5-8643-7f5862c75efe.png)
 
-* Step 2 : Re-Enter connection information
+- Step 2 : Re-Enter connection information
 
 ![step2](https://cloud.githubusercontent.com/assets/4225738/8746789/0ad367e2-2c8d-11e5-80bb-f5093801e139.png)
 
-* Note that these two first steps could be swapped by patching phpipam (see https://github.com/phpipam/phpipam/issues/25)
-* Step 3 : Configure the admin user password
+- Note that these two first steps could be swapped by patching phpipam (see <https://github.com/phpipam/phpipam/issues/25>)
+- Step 3 : Configure the admin user password
 
 ![step3](https://cloud.githubusercontent.com/assets/4225738/8746790/0c434bf6-2c8d-11e5-9ae7-b7d1021b7aa0.png)
 
-* You're done !
+- You're done !
 
 ![done](https://cloud.githubusercontent.com/assets/4225738/8746792/0d6fa34e-2c8d-11e5-8002-3793361ae34d.png)
 
@@ -83,5 +87,4 @@ $ docker-compose up -d
 
 ### Notes
 
-phpIPAM is under heavy development by the amazing Miha.
-To upgrade the release version, just change the `PHPIPAM_VERSION` environment variable to the target release (see [here](https://github.com/phpipam/phpipam/releases))
+phpIPAM is under heavy development by the amazing Miha. To upgrade the release version, just change the `PHPIPAM_VERSION` environment variable to the target release (see [here](https://github.com/phpipam/phpipam/releases))
