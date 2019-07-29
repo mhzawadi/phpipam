@@ -18,7 +18,7 @@ RUN apt-get update && \
 	a2enmod rewrite
 
 ENV PHPIPAM_SOURCE="https://github.com/phpipam/phpipam/archive/" \
-    PHPIPAM_VERSION="1.3.2" \
+    PHPIPAM_VERSION="1.4" \
     MYSQL_HOST="mysql" \
     MYSQL_USER="phpipam" \
     MYSQL_PASSWORD="phpipamadmin" \
