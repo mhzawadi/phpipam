@@ -25,6 +25,3 @@ steps:
       password:
         from_secret: dockerhub_password
 
-trigger:
-  event:
-  - tag
