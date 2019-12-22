@@ -1,5 +1,6 @@
 ARG MH_ARCH
 ARG MH_TAG
+ARG PHPIPAM_VERSION
 FROM ${MH_ARCH}:${MH_TAG}
 MAINTAINER Matthew Horwood <matt@horwood.biz>
 
@@ -18,7 +19,6 @@ RUN apt-get update && \
 	a2enmod rewrite
 
 ENV PHPIPAM_SOURCE="https://github.com/phpipam/phpipam/archive/" \
-    PHPIPAM_VERSION="1.4" \
     MYSQL_HOST="mysql" \
     MYSQL_USER="phpipam" \
     MYSQL_PASSWORD="phpipamadmin" \
