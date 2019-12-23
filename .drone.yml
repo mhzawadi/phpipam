@@ -30,6 +30,10 @@ kind: pipeline
 type: docker
 name: notification
 
+platform:
+  os: linux
+  arch: arm64
+
 steps:
   - name: send telegram notification
     image: appleboy/drone-telegram
