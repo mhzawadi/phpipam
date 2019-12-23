@@ -10,15 +10,14 @@ platform:
 steps:
   - name: publish
     image: plugins/docker
+    pull: if-not-exists
     settings:
       repo: mhzawadi/${DRONE_REPO_NAME}
       auto_tag: false
-      auto_tag_suffix: alpine
       tags:
         - 1.4.0
         - latest
       build_args:
-        - PHPIPAM_VERSION=1.4
         - MH_ARCH=arm64v8/php
         - MH_TAG=7.2-apache-stretch
       username:
@@ -31,3 +30,7 @@ steps:
     settings:
       token: 635081347:AAEA56jjuoG3QokgTPb7URrDDJBbBDl1VVc
       to: mhzawadi
+    when:
+      status:
+      - failure
+      - success
