@@ -18,7 +18,7 @@ steps:
         - v1.4.0-amd64
         - latest-amd64
       build_args:
-        - MH_ARCH=arm64v8/php
+        - MH_ARCH=php
         - MH_TAG=7.2-apache-stretch
       username:
         from_secret: dockerhub_username
@@ -81,6 +81,32 @@ depends_on:
 ---
 kind: pipeline
 type: docker
+name: manifest-latest
+
+platform:
+  os: linux
+  arch: arm
+
+steps:
+- name: manifest
+  image: plugins/manifest
+  settings:
+    username:
+      from_secret: dockerhub_username
+    password:
+      from_secret: dockerhub_password
+    target: mhzawadi/${DRONE_REPO_NAME}:latest
+    template: mhzawadi/${DRONE_REPO_NAME}:latest-ARCH
+    platforms:
+      - linux/arm
+      - linux/arm64
+depends_on:
+  - amd64
+  - arm64
+
+---
+kind: pipeline
+type: docker
 name: notification
 
 platform:
@@ -96,3 +122,4 @@ steps:
 
 depends_on:
   - manifest
+  - manifest-latest
