@@ -85,3 +85,6 @@ $ docker-compose up -d
 
 phpIPAM is under heavy development by the amazing Miha.
 To upgrade the release version, just change the `PHPIPAM_VERSION` environment variable to the target release (see [here](https://github.com/phpipam/phpipam/releases))
+
+### how to build
+`docker buildx build --platform linux/amd64,linux/arm64 -t mhzawadi/phpipam:v1.4.0.1 --push .`
