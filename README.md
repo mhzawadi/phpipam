@@ -1,4 +1,4 @@
-# docker-phpipam ![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/mhzawadi/phpipam.svg?label=amd64) ![Docker Pulls](https://img.shields.io/docker/pulls/mhzawadi/phpipam.svg) ![Docker Pulls](https://img.shields.io/docker/pulls/mhzawadi/phpipam.svg)
+# docker-phpipam ![Docker Pulls](https://img.shields.io/docker/pulls/mhzawadi/phpipam.svg)
 
 phpIPAM is an open-source web IP address management application. Its goal is to provide light and simple IP address management application.
 
@@ -23,7 +23,7 @@ Here, we store data on the host system under `/my_dir/phpipam` and use a specifi
 ### Phpipam
 
 ```bash
-$ docker run -ti -d -p 80:80 --name ipam --link phpipam-mysql:mysql mhzawadi/phpipam
+$ docker run -ti -d -p 80:80 --name ipam --link phpipam-mysql:mysql -e HOST_URL=127.0.0.1 mhzawadi/phpipam
 ```
 
 We are linking the two containers and expose the HTTP port.
@@ -64,9 +64,11 @@ You can create an all-in-one YAML deployment descriptor with Docker compose, lik
 ipam:
   image: mhzawadi/phpipam
   ports:
-   - "80:80"
+    - "80:80"
   links:
-   - phpipam-mysql
+    - phpipam-mysql
+  environment:
+    HOST_URL=127.0.0.1
 phpipam-mysql:
   image: mysql:5.6
   environment:
@@ -80,6 +82,15 @@ And next :
 ```bash
 $ docker-compose up -d
 ```
+
+### Environment variables summary
+
+- TZ: the timezone for PHP
+- MYSQL_HOST: the MySQL server
+- MYSQL_USER: the sername for MySQL
+- MYSQL_PASSWORD: the password for MySQL
+- MYSQL_DB: the MySQL database
+- HOST_URL: This is the host that you will access the site on
 
 ### Notes
 
