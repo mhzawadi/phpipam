@@ -30,7 +30,8 @@ COPY config /config
 ADD ${PHPIPAM_SOURCE}/${PHPIPAM_VERSION}.tar.gz /tmp/
 RUN tar -xzf /tmp/${PHPIPAM_VERSION}.tar.gz -C /var/www/html/ --strip-components=1 && \
     cp /config/phpipam_config.php /var/www/html/config.php && \
-		cp /config/php.ini /etc/php7/php.ini
+		cp /config/php.ini /etc/php7/php.ini && \
+		cp /config/php_fpm_site.conf /etc/php7/php-fpm.d/www.conf
 
 
 EXPOSE 80
