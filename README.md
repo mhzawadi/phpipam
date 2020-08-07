@@ -23,7 +23,7 @@ Here, we store data on the host system under `/my_dir/phpipam` and use a specifi
 ### Phpipam
 
 ```bash
-$ docker run -ti -d -p 80:80 --name ipam --link phpipam-mysql:mysql -e HOST_URL=127.0.0.1 mhzawadi/phpipam
+$ docker run -ti -d -p 80:80 --name ipam --link phpipam-mysql:mysql mhzawadi/phpipam
 ```
 
 We are linking the two containers and expose the HTTP port.
@@ -67,8 +67,6 @@ ipam:
     - "80:80"
   links:
     - phpipam-mysql
-  environment:
-    HOST_URL=127.0.0.1
 phpipam-mysql:
   image: mysql:5.6
   environment:
@@ -90,7 +88,6 @@ $ docker-compose up -d
 - MYSQL_USER: the sername for MySQL
 - MYSQL_PASSWORD: the password for MySQL
 - MYSQL_DB: the MySQL database
-- HOST_URL: This is the host that you will access the site on
 
 ### Notes
 

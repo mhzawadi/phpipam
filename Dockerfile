@@ -12,7 +12,7 @@ RUN apk update && \
 	&& rm -f /var/cache/apk/*;
 
 ENV PHPIPAM_SOURCE="https://github.com/phpipam/phpipam/archive/" \
-		PHPIPAM_VERSION="1.4" \
+		PHPIPAM_VERSION="1.4.1" \
     MYSQL_HOST="mysql" \
     MYSQL_USER="phpipam" \
     MYSQL_PASSWORD="phpipamadmin" \
@@ -32,7 +32,8 @@ ADD ${PHPIPAM_SOURCE}/${PHPIPAM_VERSION}.tar.gz /tmp/
 RUN tar -xzf /tmp/${PHPIPAM_VERSION}.tar.gz -C /var/www/html/ --strip-components=1 && \
     cp /config/phpipam_config.php /var/www/html/config.php && \
 		cp /config/php.ini /etc/php7/php.ini && \
-		cp /config/php_fpm_site.conf /etc/php7/php-fpm.d/www.conf
+		cp /config/php_fpm_site.conf /etc/php7/php-fpm.d/www.conf && \
+    cp /config/nginx_site.conf /etc/nginx/conf.d/default.conf;
 
 
 EXPOSE 80
