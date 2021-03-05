@@ -2,9 +2,40 @@ Changelog
 =========
 
 
+v1.4.2.2 (2021-02-10)
+---------------------
+
+Fix
+~~~
+-  wrong config in nginx. [Matthew Horwood]
+-  try and fix proxy requests. [Matthew Horwood]
+
+
+v1.4.2.1 (2021-02-09)
+---------------------
+
+Fix
+~~~
+-  add missing dom module. [Matthew Horwood]
+
+
+v1.4.2.0 (2021-02-09)
+---------------------
+
+Changes
+~~~~~~~
+-  bump to IPAM v1.4.2. [Matthew Horwood]
+
+
+v1.4.1.5 (2020-12-15)
+---------------------
+- Mho/fix for Mayden bug: set the forwarded for from down stream.
+  [Matthew Horwood]
+
+
 v1.4.1.4 (2020-10-14)
 ---------------------
-- Mho/traefik with ssl offload chor: try this change. [Matthew Horwood]
+- Mho/fraefik with ssl offload chor: try this change. [Matthew Horwood]
 
 
 v1.4.1.3 (2020-10-14)
@@ -114,3 +145,5 @@ v1.3.1 (2017-12-13)
 - Correct Typos in README. [pierrecdn]
 - Initial commit. [pierrecdn]
 - Initial commit. [Pierre C]
+
+
