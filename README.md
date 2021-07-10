@@ -1,6 +1,6 @@
 # docker-phpipam
 
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/mhzawadi/phpipam/build%20our%20image%20for%20latest)
+![GitHub Repo stars](https://img.shields.io/github/stars/mhzawadi/phpipam?label=Github%20Stars)
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/mhzawadi/phpipam/build%20our%20image%20for%20latest?label=Docker%20Latest)
 ![Docker Pulls](https://img.shields.io/docker/pulls/mhzawadi/phpipam.svg)
 ![Docker Stars](https://img.shields.io/docker/stars/mhzawadi/phpipam.svg)
