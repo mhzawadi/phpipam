@@ -1,4 +1,9 @@
-# docker-phpipam ![Docker Pulls](https://img.shields.io/docker/pulls/mhzawadi/phpipam.svg)
+# docker-phpipam
+
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/mhzawadi/phpipam/build%20our%20image%20for%20latest)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/mhzawadi/phpipam/build%20our%20image%20for%20latest?label=Docker%20Latest)
+![Docker Pulls](https://img.shields.io/docker/pulls/mhzawadi/phpipam.svg)
+![Docker Stars](https://img.shields.io/docker/stars/mhzawadi/phpipam.svg)
 
 phpIPAM is an open-source web IP address management application. Its goal is to provide light and simple IP address management application.
 
