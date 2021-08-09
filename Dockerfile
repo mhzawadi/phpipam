@@ -1,4 +1,4 @@
-FROM alpine:3.13
+FROM alpine:3.14
 MAINTAINER Matthew Horwood <matt@horwood.biz>
 
 # Install required deb packages
@@ -12,7 +12,7 @@ RUN apk update && \
 	&& rm -f /var/cache/apk/*;
 
 ENV PHPIPAM_SOURCE="https://github.com/phpipam/phpipam" \
-	PHPIPAM_VERSION="1.5" \
+    PHPIPAM_VERSION="1.5" \
     MYSQL_HOST="mysql" \
     MYSQL_USER="phpipam" \
     MYSQL_PASSWORD="phpipamadmin" \
@@ -33,7 +33,7 @@ RUN cd /var/www/ && git clone --recursive https://github.com/phpipam/phpipam.git
     cp /config/phpipam_config.php /var/www/html/config.php && \
     cp /config/php.ini /etc/php7/php.ini && \
     cp /config/php_fpm_site.conf /etc/php7/php-fpm.d/www.conf && \
-    cp /config/nginx_site.conf /etc/nginx/conf.d/default.conf;
+    cp /config/nginx_site.conf /etc/nginx/http.d/default.conf;
 
 
 EXPOSE 80
