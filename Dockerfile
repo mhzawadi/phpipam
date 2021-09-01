@@ -1,18 +1,18 @@
-FROM alpine:3.9.4
+FROM alpine:3.14
 MAINTAINER Matthew Horwood <matt@horwood.biz>
 
 # Install required deb packages
 RUN apk update && \
-	apk add nginx php7-fpm php7-pdo_mysql php7-sockets php7-gd php7-ldap \
-	php7-gettext php7-pcntl php7-mysqlnd php7-session php7-gmp php7-json \
-	php7-mbstring php7-iconv php7-ctype php7-curl php7-pear php7-simplexml \
+    apk add nginx php7-fpm php7-pdo_mysql php7-sockets php7-gd php7-ldap \
+    php7-gettext php7-pcntl php7-mysqlnd php7-session php7-gmp php7-json \
+    php7-mbstring php7-iconv php7-ctype php7-curl php7-pear php7-simplexml \
     php7-pecl-mcrypt php7-dom curl \
-	&& mkdir -p /var/www/html/ \
-	&& mkdir -p /run/nginx \
-	&& rm -f /var/cache/apk/*;
+    && mkdir -p /var/www/html/ \
+    && mkdir -p /run/nginx \
+    && rm -f /var/cache/apk/*;
 
 ENV PHPIPAM_SOURCE="https://github.com/phpipam/phpipam/archive/" \
-	PHPIPAM_VERSION="v1.4.2" \
+    PHPIPAM_VERSION="v1.4.4" \
     MYSQL_HOST="mysql" \
     MYSQL_USER="phpipam" \
     MYSQL_PASSWORD="phpipamadmin" \
@@ -31,9 +31,9 @@ COPY config /config
 ADD ${PHPIPAM_SOURCE}/${PHPIPAM_VERSION}.tar.gz /tmp/
 RUN tar -xzf /tmp/${PHPIPAM_VERSION}.tar.gz -C /var/www/html/ --strip-components=1 && \
     cp /config/phpipam_config.php /var/www/html/config.php && \
-		cp /config/php.ini /etc/php7/php.ini && \
-		cp /config/php_fpm_site.conf /etc/php7/php-fpm.d/www.conf && \
-    cp /config/nginx_site.conf /etc/nginx/conf.d/default.conf;
+    cp /config/php.ini /etc/php7/php.ini && \
+    cp /config/php_fpm_site.conf /etc/php7/php-fpm.d/www.conf && \
+    cp /config/nginx_site.conf /etc/nginx/http.d/default.conf;
 
 
 EXPOSE 80
