@@ -29,7 +29,7 @@ COPY config /config
 
 # copy phpipam sources to web dir
 RUN cd /var/www/ && git clone --recursive https://github.com/phpipam/phpipam.git html/ && \
-    cd html && git checkout 1.5 && git submodule update --init --recursive && \
+    cd html && git checkout ${PHPIPAM_VERSION} && git submodule update --init --recursive && \
     cp /config/phpipam_config.php /var/www/html/config.php && \
     cp /config/php.ini /etc/php7/php.ini && \
     cp /config/php_fpm_site.conf /etc/php7/php-fpm.d/www.conf && \
