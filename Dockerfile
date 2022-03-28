@@ -12,7 +12,7 @@ RUN apk update && \
     && rm -f /var/cache/apk/*;
 
 ENV PHPIPAM_SOURCE="https://github.com/phpipam/phpipam/archive/" \
-    PHPIPAM_VERSION="v1.4.5" \
+    PHPIPAM_VERSION="v1.4.6" \
     MYSQL_HOST="mysql" \
     MYSQL_USER="phpipam" \
     MYSQL_PASSWORD="phpipamadmin" \
