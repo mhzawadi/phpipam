@@ -1,8 +1,9 @@
-name: build our image for latest
+name: build our image for dev-1.4
 
 on:
+  workflow_dispatch:
   push:
-    branches: 
+    branches:
       - dev
       - dev-1.4
 
