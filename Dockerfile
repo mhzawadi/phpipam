@@ -11,8 +11,8 @@ RUN apk update && \
     && mkdir -p /run/nginx \
     && rm -f /var/cache/apk/*;
 
-ENV PHPIPAM_SOURCE="https://github.com/phpipam/phpipam/archive/" \
-    PHPIPAM_VERSION="1.5.0" \
+ENV PHPIPAM_SOURCE="https://github.com/phpipam/phpipam/releases/download" \
+    PHPIPAM_VERSION="v1.5.0" \
     MYSQL_HOST="mysql" \
     MYSQL_USER="phpipam" \
     MYSQL_PASSWORD="phpipamadmin" \
@@ -28,7 +28,7 @@ ENV PHPIPAM_SOURCE="https://github.com/phpipam/phpipam/archive/" \
 COPY config /config
 
 # copy phpipam sources to web dir
-ADD ${PHPIPAM_SOURCE}/${PHPIPAM_VERSION}.tar.gz /tmp/
+ADD ${PHPIPAM_SOURCE}/${PHPIPAM_VERSION}/phpipam-${PHPIPAM_VERSION}.tar.gz /tmp/
 RUN tar -xzf /tmp/${PHPIPAM_VERSION}.tar.gz -C /var/www/html/ --strip-components=1 && \
     cp /config/phpipam_config.php /var/www/html/config.php && \
     cp /config/php.ini /etc/php7/php.ini && \
