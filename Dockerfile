@@ -41,5 +41,5 @@ ENTRYPOINT ["/config/start.sh"]
 CMD ["nginx", "-g", "daemon off;"]
 
 ## Health Check
-HEALTHCHECK --interval=30s --timeout=3s --start-period=1s \
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s \
   CMD curl -f http://127.0.0.1/index.php || exit 1
