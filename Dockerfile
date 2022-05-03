@@ -29,7 +29,7 @@ COPY config /config
 
 # copy phpipam sources to web dir
 ADD ${PHPIPAM_SOURCE}/${PHPIPAM_VERSION}/phpipam-${PHPIPAM_VERSION}.tgz /tmp/
-RUN tar -xzf /tmp/${PHPIPAM_VERSION}.tar.gz -C /var/www/html/ --strip-components=1 && \
+RUN tar -xzf /tmp/${PHPIPAM_VERSION}.tgz -C /var/www/html/ --strip-components=1 && \
     cp /config/phpipam_config.php /var/www/html/config.php && \
     cp /config/php.ini /etc/php7/php.ini && \
     cp /config/php_fpm_site.conf /etc/php7/php-fpm.d/www.conf && \
