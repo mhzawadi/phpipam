@@ -2,6 +2,135 @@ Changelog
 =========
 
 
+v1.5.0 (2022-05-03)
+-------------------
+- Update Dockerfile. [Matthew Horwood]
+
+  bug: more fixing
+- Update Dockerfile. [Matthew Horwood]
+
+  bug: file file name
+- Update Dockerfile. [Matthew Horwood]
+
+  bug: fix url
+- 1.5.0. [Matthew Horwood]
+
+  bug: fix download
+- 1.5.0. [Matthew Horwood]
+
+  bug: use tagged version
+- Merge branch 'master' into dev. [Matthew Horwood]
+- MHO/Formattion. [Matthew Horwood]
+
+  chor: tidy format
+- MHO/Fix versions. [Matthew Horwood]
+
+  bug: fix version checkout
+  bug: [CVE-2022-0778](https://security.alpinelinux.org/vuln/CVE-2022-0778)
+- MHO/Alpine 3.15. [Matthew Horwood]
+- Build a dev image. [Matthew Horwood]
+- Fix up for alpine 3.14. [Matthew Horwood]
+
+
+v1.4.7.0 (2022-04-25)
+---------------------
+- Merge pull request #6 from mhzawadi/dev-1.4. [Matthew Horwood]
+
+  Update Dockerfile
+- Update Dockerfile. [Matthew Horwood]
+
+  Bugfixes:
+  ----------------------------
+  + Fix for SAML/2FA/login redirections (#3492, #3435, #3517)
+
+  Security Fixes:
+  ----------------------------
+  + XXS (reflected) in ripe-arin-query;
+  + XSS (reflected) in import previews;
+- MHO/Schedule cron. [Matthew Horwood]
+
+  chor: add a rebuild cron, every monday
+
+
+v1.4.6.0 (2022-03-29)
+---------------------
+- Merge pull request #5 from mhzawadi/dev-1.4. [Matthew Horwood]
+
+  Dev 1.4
+- MHO/Updates. [Matthew Horwood]
+
+  bug: rename action
+  chor: add workflow_dispatch
+  chor: update gitignore
+  chor: fix ports passed to PHP
+- V1.4.6. [Matthew Horwood]
+
+  Bugfixes:
+  ----------------------------
+  + Require unique subnets not working as intended (#3529);
+
+  Security Fixes:
+  ----------------------------
+  + Incorrect privilege assignments (#3506);
+- Merge pull request #3 from mhzawadi/snyk-
+  fix-9744c1be037518f78bb77521fac5b2f0. [Matthew Horwood]
+
+  [Snyk] Security upgrade alpine from 3.14 to 3.15
+- Fix: Dockerfile to reduce vulnerabilities. [snyk-bot]
+
+
+v1.4.5.0 (2022-01-22)
+---------------------
+
+Fix
+~~~
+-  add in the saml PHP lib chor: tidy nginx config. [Matthew Horwood]
+
+Other
+~~~~~
+- Merge pull request #2 from mhzawadi/dev-1.4. [Matthew Horwood]
+
+  Update Dockerfile
+- Update Dockerfile. [Matthew Horwood]
+
+  version bump
+- Merge pull request #1 from mhzawadi/dev-1.4. [Matthew Horwood]
+
+  Dev 1.4
+- Update Dockerfile. [Matthew Horwood]
+
+  refix this
+- Merge branch 'master' into dev-1.4. [Matthew Horwood]
+- Update readme. [Matthew Horwood]
+- Update readme. [Matthew Horwood]
+- Mho/saml2 feat: update to 1.5. [Matthew Horwood]
+- Update Dockerfile. [Matthew Horwood]
+- Update Dockerfile. [Matthew Horwood]
+- Update Dockerfile. [Matthew Horwood]
+- Update nginx_site.conf. [Matthew Horwood]
+
+  bug: if format
+- Update nginx_site.conf. [Matthew Horwood]
+
+  bug: line ending
+- Merge branch 'master' of git.horwood.biz:matt/phpipam. [Matthew
+  Horwood]
+
+
+v1.4.4.0 (2021-09-01)
+---------------------
+
+New
+~~~
+-  build dev images bug: fix build process. [Matthew Horwood]
+-  phpipam 1.4.4. [Matthew Horwood]
+
+Fix
+~~~
+-  job name. [Matthew Horwood]
+-  build dev-1.4. [Matthew Horwood]
+
+
 v1.4.2.2 (2021-02-10)
 ---------------------
 

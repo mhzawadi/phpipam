@@ -20,7 +20,7 @@ Learn more on [phpIPAM homepage](http://phpipam.net)
 Run a MySQL database, dedicated to phpipam
 
 ```bash
-$ docker run --name phpipam-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -v /my_dir/phpipam:/var/lib/mysql -d mysql:5.6
+docker run --name phpipam-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -v /my_dir/phpipam:/var/lib/mysql -d mysql:5.6
 ```
 
 Here, we store data on the host system under `/my_dir/phpipam` and use a specific root password.
@@ -28,7 +28,7 @@ Here, we store data on the host system under `/my_dir/phpipam` and use a specifi
 ### Phpipam
 
 ```bash
-$ docker run -ti -d -p 80:80 --name ipam --link phpipam-mysql:mysql mhzawadi/phpipam
+docker run -ti -d -p 80:80 --name ipam --link phpipam-mysql:mysql mhzawadi/phpipam
 ```
 
 We are linking the two containers and expose the HTTP port.
@@ -83,7 +83,7 @@ phpipam-mysql:
 And next :
 
 ```bash
-$ docker-compose up -d
+docker-compose up -d
 ```
 
 ### Environment variables summary
