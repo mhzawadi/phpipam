@@ -1,4 +1,9 @@
-# docker-phpipam ![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/mhzawadi/phpipam.svg?label=amd64) ![Docker Pulls](https://img.shields.io/docker/pulls/mhzawadi/phpipam.svg) ![Docker Pulls](https://img.shields.io/docker/pulls/mhzawadi/phpipam.svg)
+# docker-phpipam
+
+![GitHub Repo stars](https://img.shields.io/github/stars/mhzawadi/phpipam?label=Github%20Stars)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/mhzawadi/phpipam/build%20our%20image%20for%20latest?label=Docker%20Latest)
+![Docker Pulls](https://img.shields.io/docker/pulls/mhzawadi/phpipam.svg)
+![Docker Stars](https://img.shields.io/docker/stars/mhzawadi/phpipam.svg)
 
 phpIPAM is an open-source web IP address management application. Its goal is to provide light and simple IP address management application.
 
@@ -68,9 +73,9 @@ You can create an all-in-one YAML deployment descriptor with Docker compose, lik
 ipam:
   image: mhzawadi/phpipam
   ports:
-   - "80:80"
+    - "80:80"
   links:
-   - phpipam-mysql
+    - phpipam-mysql
 phpipam-mysql:
   image: mysql:5.6
   environment:
@@ -85,6 +90,27 @@ And next :
 $ docker-compose up -d
 ```
 
+### Environment variables summary
+
+- TZ: the timezone for PHP
+- MYSQL_HOST: the MySQL server
+- MYSQL_USER: the sername for MySQL
+- MYSQL_PASSWORD: the password for MySQL
+- MYSQL_DB: the MySQL database
+
 ### Notes
 
-phpIPAM is under heavy development by the amazing Miha. To upgrade the release version, just change the `PHPIPAM_VERSION` environment variable to the target release (see [here](https://github.com/phpipam/phpipam/releases))
+phpIPAM is under heavy development by the amazing Miha.
+To upgrade the release version, just change the `PHPIPAM_VERSION` environment variable to the target release (see [here](https://github.com/phpipam/phpipam/releases))
+
+# Building and versions
+
+This image has been build with github actions to allow for arm and amd images,
+the version is in two parts. Part 1 is the software version, part 2 in the build number.
+
+E.g. 1.4.1.2 - `1.4.1` is the software version, `.2` is the build number.
+
+## how to build
+Latest is build from the docker hub once I push to the github repo, the arm versions are built from my mac with the below buildx tool
+
+`docker buildx build --platform linux/amd64,linux/arm64 -t mhzawadi/phpipam:v1.4.0.1 --push .`
