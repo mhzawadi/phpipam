@@ -2,8 +2,45 @@ Changelog
 =========
 
 
+(unreleased)
+------------
+- PHP82. [Matthew Horwood]
+
+  feat: update OS to 3.19
+  feat: update PHP to 8.2
+  feat: compose file
+  feat: testing script
+  chor: fix up for php82
+
+
+v1.5.1 (2023-02-10)
+-------------------
+- Merge pull request #12 from mhzawadi/dev. [Matthew Horwood]
+
+  phpipam 1.5.1
+- Phpipam 1.5.1. [Matthew Horwood]
+
+  + XSS (reflected) in 'bw-calulator-result.php';
+  + XSS (reflected) by invalid email address response;
+  + XSS and LDAP injection in ad-search-result.php;
+  + Restrict find_full_subnets.php to CLI;
+  + Ensure confidentiality of database password;
+- Merge pull request #11 from mhzawadi/dev. [Matthew Horwood]
+
+  Update Github Actions
+- Update Github Actions. [Matthew Horwood]
+
+  chor: update github actions
+- Tidy up. [Matthew Horwood]
+
+  chor: tidy up
+
+
 v1.5.0 (2022-05-03)
 -------------------
+- Merge pull request #7 from mhzawadi/dev. [Matthew Horwood]
+
+  Dev 1.5
 - Update Dockerfile. [Matthew Horwood]
 
   bug: more fixing
