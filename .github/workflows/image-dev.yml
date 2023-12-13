@@ -1,4 +1,4 @@
-name: build our image for dev-1.4
+name: build our dev image for 1.4 and 1.6
 
 on:
   workflow_dispatch:
