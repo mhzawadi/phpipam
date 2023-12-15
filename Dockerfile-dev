@@ -6,13 +6,13 @@ RUN apk update && \
     apk add nginx php82-fpm php82-pdo_mysql php82-sockets php82-gd php82-ldap \
     php82-gettext php82-pcntl php82-mysqlnd php82-session php82-gmp php82-json \
     php82-mbstring php82-iconv php82-ctype php82-curl php82-pear php82-simplexml \
-    php82-pecl-mcrypt php82-dom curl git \
-    && mkdir -p /var/www/html/ \
-    && mkdir -p /run/nginx \
-    && rm -f /var/cache/apk/*;
+    php82-pecl-mcrypt php82-dom curl git && \
+    mkdir -p /var/www/html/ && \
+    mkdir -p /run/nginx && \
+    rm -f /var/cache/apk/*;
 
-ENV PHPIPAM_SOURCE="https://github.com/phpipam/phpipam/releases/download" \
-    PHPIPAM_VERSION="v1.6.0" \
+ENV PHPIPAM_SOURCE="https://codeload.github.com/phpipam/phpipam/zip/refs/heads/" \
+    PHPIPAM_VERSION="1.6" \
     MYSQL_HOST="mysql" \
     MYSQL_USER="phpipam" \
     MYSQL_PASSWORD="phpipamadmin" \
@@ -28,8 +28,9 @@ ENV PHPIPAM_SOURCE="https://github.com/phpipam/phpipam/releases/download" \
 COPY config /config
 
 # copy phpipam sources to web dir
-ADD ${PHPIPAM_SOURCE}/${PHPIPAM_VERSION}/phpipam-${PHPIPAM_VERSION}.tgz /tmp/
-RUN tar -xzf /tmp/phpipam-${PHPIPAM_VERSION}.tgz -C /var/www/html/ --strip-components=1 && \
+ADD ${PHPIPAM_SOURCE}/${PHPIPAM_VERSION} /tmp/ipam.zip
+RUN unzip -d /var/www/ /tmp/ipam.zip && \
+    mv /var/www/phpipam-1.6/* /var/www/html/ && \
     cp /config/phpipam_config.php /var/www/html/config.php && \
     cp /config/php.ini /etc/php82/php.ini && \
     cp /config/php_fpm_site.conf /etc/php82/php-fpm.d/www.conf && \

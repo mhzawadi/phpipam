@@ -1,4 +1,4 @@
-name: build our image for dev-1.4
+name: build our dev image for 1.4 and 1.6
 
 on:
   workflow_dispatch:
@@ -25,6 +25,7 @@ jobs:
           push: true
           platforms: linux/amd64,linux/arm64,linux/arm/v7
           tags: mhzawadi/phpipam:dev
+          file: ./Dockerfile
 
   build-dev-1-4:
     runs-on: ubuntu-latest
