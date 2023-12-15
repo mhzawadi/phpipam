@@ -1,12 +1,12 @@
-FROM alpine:3.15
+FROM alpine:3.19
 MAINTAINER Matthew Horwood <matt@horwood.biz>
 
 # Install required deb packages
 RUN apk update && \
-    apk add nginx php7-fpm php7-pdo_mysql php7-sockets php7-gd php7-ldap \
-    php7-gettext php7-pcntl php7-mysqlnd php7-session php7-gmp php7-json \
-    php7-mbstring php7-iconv php7-ctype php7-curl php7-pear php7-simplexml \
-    php7-pecl-mcrypt php7-dom curl git \
+    apk add nginx php81-fpm php81-pdo_mysql php81-sockets php81-gd php81-ldap \
+    php81-gettext php81-pcntl php81-mysqlnd php81-session php81-gmp php81-json \
+    php81-mbstring php81-iconv php81-ctype php81-curl php81-pear php81-simplexml \
+    php81-pecl-mcrypt php81-dom curl git \
     && mkdir -p /var/www/html/ \
     && mkdir -p /run/nginx \
     && rm -f /var/cache/apk/*;
@@ -31,8 +31,8 @@ COPY config /config
 ADD ${PHPIPAM_SOURCE}/${PHPIPAM_VERSION}/phpipam-${PHPIPAM_VERSION}.tgz /tmp/
 RUN tar -xzf /tmp/phpipam-${PHPIPAM_VERSION}.tgz -C /var/www/html/ --strip-components=1 && \
     cp /config/phpipam_config.php /var/www/html/config.php && \
-    cp /config/php.ini /etc/php7/php.ini && \
-    cp /config/php_fpm_site.conf /etc/php7/php-fpm.d/www.conf && \
+    cp /config/php.ini /etc/php81/php.ini && \
+    cp /config/php_fpm_site.conf /etc/php81/php-fpm.d/www.conf && \
     cp /config/nginx_site.conf /etc/nginx/http.d/default.conf;
 
 
