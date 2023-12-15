@@ -3,10 +3,10 @@ MAINTAINER Matthew Horwood <matt@horwood.biz>
 
 # Install required deb packages
 RUN apk update && \
-    apk add nginx php81-fpm php81-pdo_mysql php81-sockets php81-gd php81-ldap \
-    php81-gettext php81-pcntl php81-mysqlnd php81-session php81-gmp php81-json \
-    php81-mbstring php81-iconv php81-ctype php81-curl php81-pear php81-simplexml \
-    php81-pecl-mcrypt php81-dom curl git \
+    apk add nginx php82-fpm php82-pdo_mysql php82-sockets php82-gd php82-ldap \
+    php82-gettext php82-pcntl php82-mysqlnd php82-session php82-gmp php82-json \
+    php82-mbstring php82-iconv php82-ctype php82-curl php82-pear php82-simplexml \
+    php82-pecl-mcrypt php82-dom curl git \
     && mkdir -p /var/www/html/ \
     && mkdir -p /run/nginx \
     && rm -f /var/cache/apk/*;
@@ -31,8 +31,8 @@ COPY config /config
 ADD ${PHPIPAM_SOURCE}/${PHPIPAM_VERSION}/phpipam-${PHPIPAM_VERSION}.tgz /tmp/
 RUN tar -xzf /tmp/phpipam-${PHPIPAM_VERSION}.tgz -C /var/www/html/ --strip-components=1 && \
     cp /config/phpipam_config.php /var/www/html/config.php && \
-    cp /config/php.ini /etc/php81/php.ini && \
-    cp /config/php_fpm_site.conf /etc/php81/php-fpm.d/www.conf && \
+    cp /config/php.ini /etc/php82/php.ini && \
+    cp /config/php_fpm_site.conf /etc/php82/php-fpm.d/www.conf && \
     cp /config/nginx_site.conf /etc/nginx/http.d/default.conf;
 
 
