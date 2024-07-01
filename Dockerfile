@@ -1,4 +1,4 @@
-FROM alpine:3.19
+FROM alpine:3.20
 MAINTAINER Matthew Horwood <matt@horwood.biz>
 
 # Install required deb packages
@@ -9,7 +9,9 @@ RUN apk update && \
     php82-pecl-mcrypt php82-dom curl git \
     && mkdir -p /var/www/html/ \
     && mkdir -p /run/nginx \
-    && rm -f /var/cache/apk/*;
+    && rm -f /var/cache/apk/*; \
+    [ -f /usr/bin/php ] && rm -f /usr/bin/php; \
+    ln -s /usr/bin/php82 /usr/bin/php;
 
 ENV PHPIPAM_SOURCE="https://github.com/phpipam/phpipam/releases/download" \
     PHPIPAM_VERSION="v1.6.0" \
