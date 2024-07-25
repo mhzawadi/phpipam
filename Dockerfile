@@ -6,7 +6,7 @@ RUN apk update && \
     apk add nginx php82-fpm php82-pdo_mysql php82-sockets php82-gd php82-ldap \
     php82-gettext php82-pcntl php82-mysqlnd php82-session php82-gmp php82-json \
     php82-mbstring php82-iconv php82-ctype php82-curl php82-pear php82-simplexml \
-    php82-pecl-mcrypt php82-dom curl git \
+    php82-pecl-mcrypt php82-dom php82-posix php82-cli curl git \
     && mkdir -p /var/www/html/ \
     && mkdir -p /run/nginx \
     && rm -f /var/cache/apk/*; \
