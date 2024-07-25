@@ -35,6 +35,7 @@ RUN tar -xzf /tmp/phpipam-${PHPIPAM_VERSION}.tgz -C /var/www/html/ --strip-compo
     cp /config/phpipam_config.php /var/www/html/config.php && \
     cp /config/php.ini /etc/php82/php.ini && \
     cp /config/php_fpm_site.conf /etc/php82/php-fpm.d/www.conf && \
+    cp /config/php-fpm.conf /etc/php82/php-fpm.conf && \
     cp /config/nginx_site.conf /etc/nginx/http.d/default.conf;
 
 
