@@ -3,18 +3,18 @@ MAINTAINER Matthew Horwood <matt@horwood.biz>
 
 # Install required deb packages
 RUN apk update && \
-    apk add nginx php82-fpm php82-pdo_mysql php82-sockets php82-gd php82-ldap \
-    php82-gettext php82-pcntl php82-mysqlnd php82-session php82-gmp php82-json \
-    php82-mbstring php82-iconv php82-ctype php82-curl php82-pear php82-simplexml \
-    php82-pecl-mcrypt php82-dom php82-posix php82-cli curl git \
+    apk add nginx php83-fpm php83-pdo_mysql php83-sockets php83-gd php83-ldap \
+    php83-gettext php83-pcntl php83-mysqlnd php83-session php83-gmp php83-json \
+    php83-mbstring php83-iconv php83-ctype php83-curl php83-pear php83-simplexml \
+    php83-pecl-mcrypt php83-dom php83-posix php83-cli curl git \
     && mkdir -p /var/www/html/ \
     && mkdir -p /run/nginx \
     && rm -f /var/cache/apk/*; \
     [ -f /usr/bin/php ] && rm -f /usr/bin/php; \
-    ln -s /usr/bin/php82 /usr/bin/php;
+    ln -s /usr/bin/php83 /usr/bin/php;
 
 ENV PHPIPAM_SOURCE="https://github.com/phpipam/phpipam/releases/download" \
-    PHPIPAM_VERSION="v1.6.1" \
+    PHPIPAM_VERSION="v1.7.0" \
     MYSQL_HOST="mysql" \
     MYSQL_USER="phpipam" \
     MYSQL_PASSWORD="phpipamadmin" \
@@ -33,9 +33,9 @@ COPY config /config
 ADD ${PHPIPAM_SOURCE}/${PHPIPAM_VERSION}/phpipam-${PHPIPAM_VERSION}.tgz /tmp/
 RUN tar -xzf /tmp/phpipam-${PHPIPAM_VERSION}.tgz -C /var/www/html/ --strip-components=1 && \
     cp /config/phpipam_config.php /var/www/html/config.php && \
-    cp /config/php.ini /etc/php82/php.ini && \
-    cp /config/php_fpm_site.conf /etc/php82/php-fpm.d/www.conf && \
-    cp /config/php-fpm.conf /etc/php82/php-fpm.conf && \
+    cp /config/php.ini /etc/php83/php.ini && \
+    cp /config/php_fpm_site.conf /etc/php83/php-fpm.d/www.conf && \
+    cp /config/php-fpm.conf /etc/php83/php-fpm.conf && \
     cp /config/nginx_site.conf /etc/nginx/http.d/default.conf;
 
 
