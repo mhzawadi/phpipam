@@ -14,7 +14,7 @@ RUN apk update && \
     ln -s /usr/bin/php83 /usr/bin/php;
 
 ENV PHPIPAM_SOURCE="https://github.com/phpipam/phpipam/releases/download" \
-    PHPIPAM_VERSION="v1.7.1" \
+    PHPIPAM_VERSION="v1.7.2" \
     MYSQL_HOST="mysql" \
     MYSQL_USER="phpipam" \
     MYSQL_PASSWORD="phpipamadmin" \
