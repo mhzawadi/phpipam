@@ -1,4 +1,4 @@
-FROM alpine:3.20
+FROM alpine:3.22
 MAINTAINER Matthew Horwood <matt@horwood.biz>
 
 # Install required deb packages
@@ -14,7 +14,7 @@ RUN apk update && \
     ln -s /usr/bin/php83 /usr/bin/php;
 
 ENV PHPIPAM_SOURCE="https://github.com/phpipam/phpipam/releases/download" \
-    PHPIPAM_VERSION="v1.7.2" \
+    PHPIPAM_VERSION="v1.7.4" \
     MYSQL_HOST="mysql" \
     MYSQL_USER="phpipam" \
     MYSQL_PASSWORD="phpipamadmin" \
